@@ -5,7 +5,7 @@ using UnityEngine;
 public class GrowOnHover : MonoBehaviour
 {
     bool doOnce = false;
-    float scaleFactor = 1.5f;
+    public float scaleFactor = 1.5f;
     public void OnMouseOver()
     {
         //If your mouse hovers over the GameObject with the script attached, output this message
