@@ -58,6 +58,8 @@ public class MoveItem : MonoBehaviour
             {
                 Debug.Log("bad");
                 ShelfFood.wrongItems += 1;
+                if (ShelfFood.lives > 0)
+                    ShelfFood.lives -= 1;
             }
         }
     }

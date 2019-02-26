@@ -43,6 +43,9 @@ public class ShelfFood : MonoBehaviour
 
     public Text loseText;
     public Text winText;
+    public Text livesText;
+
+    public static int lives = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -61,7 +64,8 @@ public class ShelfFood : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // Debug.Log(quantity);
+        // Debug.Log(quantity);
+       UpdateLives();
        if (doneShopping)
         {
             Debug.Log("done");
@@ -70,6 +74,7 @@ public class ShelfFood : MonoBehaviour
             timer += Time.deltaTime;
             if (timer > 7f)
             {
+                Reset();
                 SceneManager.LoadScene("SalmonNigiriRecipe");
             }
             //Destroy(gameObject) ;
@@ -81,6 +86,7 @@ public class ShelfFood : MonoBehaviour
             timer += Time.deltaTime;
             if (timer > 7f)
             {
+                Reset();
                 SceneManager.LoadScene("SalmonNigiriRecipe");
             }
             //Destroy(gameObject);
@@ -92,12 +98,20 @@ public class ShelfFood : MonoBehaviour
 
     }
 
+
+    private void UpdateLives()
+    {
+        livesText.text = "Lives: " + lives.ToString();
+    }
+
+
     private void Reset()
     {
         wrongItems = 0;
         loseText.gameObject.SetActive(false);
         winText.gameObject.SetActive(false);
         foodCount = 0;
+        lives = 3;
     }
 
     public static void CheckIfDone()
