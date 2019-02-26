@@ -88,14 +88,14 @@ public class ShelfFood : MonoBehaviour
 
     private void UpdateList()
     {
-        item1.text =  quantity[0].ToString() + " bottle of soy sauce";
-        item2.text = quantity[2].ToString() + " bottles of salt";
+        item1.text = quantity[0].ToString();// + " bottle of soy sauce";
+        item2.text = quantity[2].ToString();// + " bottles of salt";
 
-        item3.text = quantity[3].ToString() + " bags of sushi rice";
+        item3.text = quantity[3].ToString();// + " bags of sushi rice";
 
-        item4.text = quantity[5].ToString() + " pieces of salmon";
-        item5.text = quantity[4].ToString() + " bottles of wasabi";
-        item6.text = quantity[1].ToString() + " bottle of vinegar";
+        item4.text = quantity[5].ToString();// + " pieces of salmon";
+        item5.text = quantity[4].ToString();// + " bottles of wasabi";
+        item6.text = quantity[1].ToString();// + " bottle of vinegar";
 
     }
 
