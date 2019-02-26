@@ -54,7 +54,7 @@ public class MoveItem : MonoBehaviour
                     //Debug.Log("hit");
                 }
             }
-            if (badItem)
+            if (badItem && !ShelfFood.doneShopping)
             {
                 Debug.Log("bad");
                 ShelfFood.wrongItems += 1;
