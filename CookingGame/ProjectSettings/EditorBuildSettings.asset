@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/SalmonNigiriRecipe.unity
     guid: 2964028c1ba2e1b4f93707141d1086ad
+  - enabled: 1
+    path: Assets/_Scenes/SalmonCutting.unity
+    guid: 21f08c5fa643ad845b43c33615f4b918
   m_configObjects: {}
