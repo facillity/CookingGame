@@ -38,18 +38,26 @@ public class MoveItem : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        bool badItem = true;
         if (collision.gameObject.CompareTag("hand"))
         {
             gameObject.layer = 10; // i created a layer called "falling" which is index 10 of the layers
             isHit = true;    
+
             for (int i = 0; i < shopList.Length; i++)
             {
                 if (gameObject.name == ShelfFood.shoppingList[i] && ShelfFood.quantity[i] != 0)
                 {
+                    badItem = false;
                     ShelfFood.quantity[i] -= 1;
                     ShelfFood.CheckIfDone();
-                    Debug.Log("hit");
+                    //Debug.Log("hit");
                 }
+            }
+            if (badItem)
+            {
+                Debug.Log("bad");
+                ShelfFood.wrongItems += 1;
             }
         }
     }

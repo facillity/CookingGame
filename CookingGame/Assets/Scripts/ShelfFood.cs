@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ShelfFood : MonoBehaviour
 {
@@ -10,11 +9,12 @@ public class ShelfFood : MonoBehaviour
     int foodCount;
     public GameObject foodItem;
     private float[] shelfPositions;
+    private float timer;
 
     List<GameObject> foodList;
     public static string[] shoppingList; // put items needed here
     public static int[] quantity;  // put quantity of items needed (match index from shopping list above)
-    
+    public static int wrongItems = 0;
     
     // foods
     public GameObject food1;
@@ -41,6 +41,9 @@ public class ShelfFood : MonoBehaviour
     public Text item5;
     public Text item6;
 
+    public Text loseText;
+    public Text winText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +54,7 @@ public class ShelfFood : MonoBehaviour
         foodList = new List<GameObject> { food1, food2, food3, food4, food5, food6, food7, food8, food9, food10, food11, food12 };
         shoppingList = new string[6]{"soy sauce(Clone)", "vinegar(Clone)", "salt(Clone)", "sushi rice bag(Clone)", "wasabi(Clone)","salmonslab(Clone)"};
         quantity = new int[6] { 4, 3 , 3, 4, 2, 4 };
+        timer = 0f;
 
     }
 
@@ -62,14 +66,38 @@ public class ShelfFood : MonoBehaviour
         {
             Debug.Log("done");
             GameObject.Find("Progress").GetComponent<ProgressScript>().stage++;
-            SceneManager.LoadScene("SalmonNigiriRecipe");
-            Destroy(gameObject) ;
+            winText.gameObject.SetActive(true);
+            timer += Time.deltaTime;
+            if (timer > 7f)
+            {
+                SceneManager.LoadScene("SalmonNigiriRecipe");
+            }
+            //Destroy(gameObject) ;
+        }
+       else if (wrongItems >= 3 && !doneShopping)
+        {
+            Debug.Log("3 wrong items");
+            loseText.gameObject.SetActive(true);
+            timer += Time.deltaTime;
+            if (timer > 7f)
+            {
+                SceneManager.LoadScene("SalmonNigiriRecipe");
+            }
+            //Destroy(gameObject);
         }
         else
         {
             UpdateList();
         }
 
+    }
+
+    private void Reset()
+    {
+        wrongItems = 0;
+        loseText.gameObject.SetActive(false);
+        winText.gameObject.SetActive(false);
+        foodCount = 0;
     }
 
     public static void CheckIfDone()
