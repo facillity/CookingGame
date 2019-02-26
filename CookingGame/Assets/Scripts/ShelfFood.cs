@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ShelfFood : MonoBehaviour
 {
@@ -54,6 +55,8 @@ public class ShelfFood : MonoBehaviour
        if (doneShopping)
         {
             Debug.Log("done");
+            GameObject.Find("Progress").GetComponent<ProgressScript>().stage++;
+            SceneManager.LoadScene("SalmonNigiriRecipe");
             Destroy(gameObject) ;
         }
         else

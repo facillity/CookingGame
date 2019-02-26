@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/CookBook.unity
     guid: 24eaaaeb7c697904f95e62247a1443e8
+  - enabled: 1
+    path: Assets/_Scenes/minigame1.unity
+    guid: 65cb0441625559c40963517669b2a980
+  - enabled: 1
+    path: Assets/_Scenes/SalmonNigiriRecipe.unity
+    guid: 2964028c1ba2e1b4f93707141d1086ad
   m_configObjects: {}
