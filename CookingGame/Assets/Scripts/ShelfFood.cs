@@ -50,7 +50,7 @@ public class ShelfFood : MonoBehaviour
         Invoke("StockShelf", 0.4f);
         foodList = new List<GameObject> { food1, food2, food3, food4, food5, food6, food7, food8, food9, food10, food11, food12 };
         shoppingList = new string[6]{"soy sauce(Clone)", "vinegar(Clone)", "salt(Clone)", "sushi rice bag(Clone)", "wasabi(Clone)","salmonslab(Clone)"};
-        quantity = new int[6] { 4, 3 , 3, 5, 2, 4 };
+        quantity = new int[6] { 4, 3 , 3, 4, 2, 4 };
 
     }
 
