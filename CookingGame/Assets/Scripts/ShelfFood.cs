@@ -61,7 +61,7 @@ public class ShelfFood : MonoBehaviour
        if (doneShopping)
         {
             Debug.Log("done");
-          //  GameObject.Find("Progress").GetComponent<ProgressScript>().stage++;
+            GameObject.Find("Progress").GetComponent<ProgressScript>().stage++;
             SceneManager.LoadScene("SalmonNigiriRecipe");
             Destroy(gameObject) ;
         }
