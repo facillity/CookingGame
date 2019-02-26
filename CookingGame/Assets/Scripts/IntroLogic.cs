@@ -19,7 +19,7 @@ public class IntroLogic : MonoBehaviour
         timer += Time.deltaTime;
         //Debug.Log(timer);
         if (timer > 7.75f){
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("_MainMenu");
         }
     }
 }
