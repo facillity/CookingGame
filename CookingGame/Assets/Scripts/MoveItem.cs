@@ -6,11 +6,13 @@ public class MoveItem : MonoBehaviour
 {
     private Rigidbody2D rb;
     private bool isHit;
+    private string[] shopList;
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         isHit = false;
+        shopList = ShelfFood.shoppingList;
     }
 
     // Update is called once per frame
@@ -40,6 +42,15 @@ public class MoveItem : MonoBehaviour
         {
             gameObject.layer = 10; // i created a layer called "falling" which is index 10 of the layers
             isHit = true;    
+            for (int i = 0; i < shopList.Length; i++)
+            {
+                if (gameObject.name == ShelfFood.shoppingList[i] && ShelfFood.quantity[i] != 0)
+                {
+                    ShelfFood.quantity[i] -= 1;
+                    ShelfFood.CheckIfDone();
+                    Debug.Log("hit");
+                }
+            }
         }
     }
 }
