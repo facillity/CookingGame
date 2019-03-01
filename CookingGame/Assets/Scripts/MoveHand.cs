@@ -20,11 +20,6 @@ public class MoveHand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void FixedUpdate()
-    {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             moveUp();
@@ -33,6 +28,11 @@ public class MoveHand : MonoBehaviour
         {
             moveDown();
         }
+    }
+
+    private void FixedUpdate()
+    {
+
     }
 
     private void moveUp()

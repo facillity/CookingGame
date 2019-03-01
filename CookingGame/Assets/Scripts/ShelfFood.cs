@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ShelfFood : MonoBehaviour
 {
@@ -10,11 +9,12 @@ public class ShelfFood : MonoBehaviour
     int foodCount;
     public GameObject foodItem;
     private float[] shelfPositions;
+    private float timer;
 
     List<GameObject> foodList;
     public static string[] shoppingList; // put items needed here
     public static int[] quantity;  // put quantity of items needed (match index from shopping list above)
-    
+    public static int wrongItems = 0;
     
     // foods
     public GameObject food1;
@@ -25,15 +25,27 @@ public class ShelfFood : MonoBehaviour
     public GameObject food6;
     public GameObject food7;
     public GameObject food8;
+    public GameObject food9;
+    public GameObject food10;
+    public GameObject food11;
+    public GameObject food12;
 
     int shoppingListLength;
-    int foodListLength = 8;
+    int foodListLength = 12;
     public static bool doneShopping = false;
 
     public Text item1;
     public Text item2;
     public Text item3;
     public Text item4;
+    public Text item5;
+    public Text item6;
+
+    public Text loseText;
+    public Text winText;
+    public Text livesText;
+
+    public static int lives = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -42,28 +54,65 @@ public class ShelfFood : MonoBehaviour
         foodCount = 0;
         //food = new GameObject[25];
         Invoke("StockShelf", 0.4f);
-        foodList = new List<GameObject> { food1, food2, food3, food4, food5, food6, food7, food8 };
-        shoppingList = new string[4]{"pepper(Clone)", "vinegar(Clone)", "salt(Clone)", "pie(Clone)"};
-        quantity = new int[4] { 1, 2 , 3, 2 };
+        foodList = new List<GameObject> { food1, food2, food3, food4, food5, food6, food7, food8, food9, food10, food11, food12 };
+        shoppingList = new string[6]{"soy sauce(Clone)", "vinegar(Clone)", "salt(Clone)", "sushi rice bag(Clone)", "wasabi(Clone)","salmonslab(Clone)"};
+        quantity = new int[6] { 4, 3 , 3, 4, 2, 3 };
+        timer = 0f;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-       // Debug.Log(quantity);
+        // Debug.Log(quantity);
+       UpdateLives();
        if (doneShopping)
         {
+            
             Debug.Log("done");
-            GameObject.Find("Progress").GetComponent<ProgressScript>().stage++;
-            SceneManager.LoadScene("SalmonNigiriRecipe");
-            Destroy(gameObject) ;
+            winText.gameObject.SetActive(true);
+            timer += Time.deltaTime;
+            if (timer > 7f)
+            {
+                Reset();
+                GameObject.Find("Progress").GetComponent<ProgressScript>().stage++;
+                SceneManager.LoadScene("SalmonNigiriRecipe");
+            }
+            //Destroy(gameObject) ;
+        }
+       else if (wrongItems >= 3 && !doneShopping)
+        {
+            Debug.Log("3 wrong items");
+            loseText.gameObject.SetActive(true);
+            timer += Time.deltaTime;
+            if (timer > 7f)
+            {
+                Reset();
+                SceneManager.LoadScene("SalmonNigiriRecipe");
+            }
+            //Destroy(gameObject);
         }
         else
         {
             UpdateList();
         }
 
+    }
+
+
+    private void UpdateLives()
+    {
+        livesText.text = "Lives: " + lives.ToString();
+    }
+
+
+    private void Reset()
+    {
+        wrongItems = 0;
+        loseText.gameObject.SetActive(false);
+        winText.gameObject.SetActive(false);
+        foodCount = 0;
+        lives = 3;
     }
 
     public static void CheckIfDone()
@@ -82,12 +131,14 @@ public class ShelfFood : MonoBehaviour
 
     private void UpdateList()
     {
-        item1.text =  quantity[0].ToString() + " bottle of pepper";
-        item2.text = quantity[2].ToString() + " bottles of salt";
+        item1.text = quantity[0].ToString();// + " bottle of soy sauce";
+        item2.text = quantity[2].ToString();// + " bottles of salt";
 
-        item3.text = quantity[3].ToString() + " pies";
+        item3.text = quantity[3].ToString();// + " bags of sushi rice";
 
-        item4.text = quantity[1].ToString() + " bottle of vinegar";
+        item4.text = quantity[5].ToString();// + " pieces of salmon";
+        item5.text = quantity[4].ToString();// + " bottles of wasabi";
+        item6.text = quantity[1].ToString();// + " bottle of vinegar";
 
     }
 
