@@ -41,9 +41,10 @@ public class RecipeScreenLogic : MonoBehaviour
         //Debug.Log(timer);
         if (timer > 5f){
             if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 0){
-                SceneManager.LoadScene("minigame1");
+                //MiniGameDirectionsLogic.loadGameSalmonNigiri1();
+                SceneManager.LoadScene("MiniGameDirections");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 1){
-                SceneManager.LoadScene("SalmonCutting");
+                SceneManager.LoadScene("MiniGameDirections");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 2){
                 SceneManager.LoadScene("_MainMenu");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 3){

@@ -7,13 +7,20 @@ using UnityEngine.SceneManagement;
 public class GameLogic : MonoBehaviour
 {
 
-    float timer = -3;
+    float timer = 33;
     float timer2 = 0;
+    public int chosen;
     public Text text;
     public Text text2;
     public Text text3;
+
+    public Text text4;
     private string[] letters = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
 
+    private string[] recipeNigiriString = {"first", "we", "must", "get", "the", "items", "on", "the", "list", "which", "include", "soy", "sauce", "vinegar", "salt",
+                                        "sushi", "rice", "wasabi", "and", "salmon", "first", "we", "use", "the", "salt", "to", "cook", "the", "sushi", "rice", "then",
+                                        "use", "the", "vinegar", "to", "coat", "the", "rice", "which", "we", "will", "then", "place", "our", "raw", "salmon", "on",
+                                        "top", "of", "finally", "enjoy", "with", "wasabi"};
     public GameObject salmonSprite;
     public Sprite s1;
     public Sprite s2;
@@ -22,28 +29,52 @@ public class GameLogic : MonoBehaviour
     public Sprite s5;
     public Sprite s6;
 
-    private string chosenLetter;
-    private int points = 0;
+    private string chosenWord;
+    private int wordsLeft;
 
     private bool doOnce = false;
+    private string typedWord;
+    private int on;
 
     private bool endState = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        //if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 1){
+            resetNigiri();
+        //}
+    }
+
+    void resetNigiri(){
+        wordsLeft = recipeNigiriString.Length;
+        timer = 43f;
+        chosen = 0;
+        timer2 = 0f;
+        on = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timer > 0 && !doOnce){
+        if (timer <= 40 && !doOnce){
             doOnce = true;
-            spawnLetter();
+            spawnWord();
+        }
+        if (timer <=42 && timer > 41){
+            text4.text = "Ready";
+        }
+        if (timer <=41 && timer > 40){
+            text4.text = "Set";
+        }
+        if (timer <=40 && timer >= 39){
+            text4.text = "GO!";
+        }
+        if (timer <39){
+            text4.gameObject.SetActive(false);
         }
         
-        if (timer < 20){
-            timer += Time.deltaTime;
+        if (timer > 0 && !endState){
+            timer -= Time.deltaTime;
         } else {
             endState = true;
             text.color = Color.red;
@@ -110,28 +141,53 @@ public class GameLogic : MonoBehaviour
 
             if (timer2 > 7.5f){
                 // get progress to add 1
-                GameObject.Find("Progress").GetComponent<ProgressScript>().stage++;
+                if (wordsLeft <= 0){
+                    GameObject.Find("Progress").GetComponent<ProgressScript>().stage++;
+                }
                 SceneManager.LoadScene("SalmonNigiriRecipe");
             }
         }
     }
 
-    void spawnLetter(){
-        int chosen = Random.Range(0, 26);
-        text2.text = "PRESS: " + letters[chosen];
-        chosenLetter = letters[chosen];
+    void spawnWord(){
+        //int chosen = Random.Range(0, 26);
+        if (chosen != recipeNigiriString.Length-1){
+            text2.text = "TYPE: " + recipeNigiriString[chosen] + " " + recipeNigiriString[chosen+1];
+        } else {
+            text2.text = "TYPE: " + recipeNigiriString[chosen];
+        }
+        
+        chosenWord = recipeNigiriString[chosen];
     }
 
     void pressed(string s){
         if (doOnce && !endState){
-            if (chosenLetter == s){
-                points++;
-                spawnLetter();
-                progressSprite(true);
+            //Debug.Log("Pressed:" + s);
+            if (chosenWord[on].ToString() == s){
+                text2.color = new Color(0.125490196f, 0.125490196f, 0.125490196f, 1f);
+                //Debug.Log("Equals.");
+                on++;
+                typedWord = typedWord + s;
+                if (typedWord == chosenWord && chosenWord == recipeNigiriString[recipeNigiriString.Length-1] && wordsLeft == 1){
+                    // that was the last word.
+                    text2.text = "FINISHED! Good Job!";
+                    endState = true;
+                    wordsLeft--;
+                    progressSprite(true);
+                }
+                else if (typedWord == chosenWord){
+                    wordsLeft--;
+                    chosen++;
+                    on = 0;
+                    typedWord = "";
+                    spawnWord();
+                    progressSprite(true);
+                }
             } else {
-                if (points != 0)
-                    points--;
-                spawnLetter();
+                //Debug.Log("ResetWord");
+                typedWord = "";
+                text2.color = Color.red;
+                on = 0;
             }
             updateText();
         }
@@ -168,7 +224,7 @@ public class GameLogic : MonoBehaviour
     }
 
     void updateText(){
-        text3.text = "Salmon Pieces: " + points.ToString();
+        text3.text = "Pieces Left: " + wordsLeft.ToString();
     }
 
 }
