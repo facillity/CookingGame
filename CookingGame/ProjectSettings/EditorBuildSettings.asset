@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/MiniGameDirections.unity
     guid: 8ea64f09ccbba16408beafde05d459d6
+  - enabled: 1
+    path: Assets/_Scenes/VinegarRiceMinigame.unity
+    guid: bec1ef6f9b591b745bbb7a8d58c82123
   m_configObjects: {}

@@ -78,6 +78,7 @@ public class GameLogic : MonoBehaviour
         } else {
             endState = true;
             text.color = Color.red;
+            //text2.text = "Oh no! Failed!";
         }
         
         text.text = "Timer: " + timer.ToString("0:00");
@@ -138,6 +139,9 @@ public class GameLogic : MonoBehaviour
 
         if (endState){
             timer2 += Time.deltaTime;
+            if (wordsLeft > 0){
+                text2.text = "Oh no! Failed!";
+            }
 
             if (timer2 > 7.5f){
                 // get progress to add 1

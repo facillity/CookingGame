@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class RecipeScreenLogic : MonoBehaviour
@@ -10,6 +11,7 @@ public class RecipeScreenLogic : MonoBehaviour
     public GameObject cm2;
     public GameObject cm3;
     public GameObject cm4;
+    public Text text;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,20 @@ public class RecipeScreenLogic : MonoBehaviour
         }
         timer += Time.deltaTime;
         //Debug.Log(timer);
+
+        if (timer > 1.5f){
+            text.text = "Loading..";
+        }
+        if (timer > 2.5f){
+            text.text = "Loading...";
+        }
+        if (timer > 3.5f){
+            text.text = "Loading.";
+        }
+        if (timer > 4.5f){
+            text.text = "Loading..";
+        }
+
         if (timer > 5f){
             if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 0){
                 //MiniGameDirectionsLogic.loadGameSalmonNigiri1();
@@ -46,9 +62,9 @@ public class RecipeScreenLogic : MonoBehaviour
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 1){
                 SceneManager.LoadScene("MiniGameDirections");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 2){
-                SceneManager.LoadScene("_MainMenu");
+                SceneManager.LoadScene("MiniGameDirections");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 3){
-                SceneManager.LoadScene("minigame1");
+                SceneManager.LoadScene("_MainMenu");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 4){
                 SceneManager.LoadScene("minigame1");
             }
