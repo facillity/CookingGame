@@ -47,7 +47,7 @@ public class GameLogic : MonoBehaviour
 
     void resetNigiri(){
         wordsLeft = recipeNigiriString.Length;
-        timer = 43f;
+        timer = 63f;
         chosen = 0;
         timer2 = 0f;
         on = 0;
@@ -56,20 +56,20 @@ public class GameLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer <= 40 && !doOnce){
+        if (timer <= 60 && !doOnce){
             doOnce = true;
             spawnWord();
         }
-        if (timer <=42 && timer > 41){
+        if (timer <=62 && timer > 61){
             text4.text = "Ready";
         }
-        if (timer <=41 && timer > 40){
+        if (timer <=61 && timer > 60){
             text4.text = "Set";
         }
-        if (timer <=40 && timer >= 39){
+        if (timer <=60 && timer >= 59){
             text4.text = "GO!";
         }
-        if (timer <39){
+        if (timer <59){
             text4.gameObject.SetActive(false);
         }
         

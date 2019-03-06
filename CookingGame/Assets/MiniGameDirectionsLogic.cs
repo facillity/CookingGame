@@ -28,7 +28,7 @@ public class MiniGameDirectionsLogic : MonoBehaviour
 
         if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 1){
             gameTitle.text = "Cut Salmon";
-            gameDescription.text = "Type the recipe given to you on the bottom of the screen! You have 40 seconds to do it!";
+            gameDescription.text = "Type the recipe given to you on the bottom of the screen! You have 60 seconds to do it!";
             gameImage.GetComponent<Image>().sprite = salmonNigiri2;
             Keyboard.SetActive(true);
             Mouse.SetActive(false);
