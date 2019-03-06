@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ProgressScript : MonoBehaviour
 {
-    public int stage = 0;
+    public int stage;
 
     void Start(){
-        stage = 0;
+        //stage = 0;
     }
 
     void Awake(){
