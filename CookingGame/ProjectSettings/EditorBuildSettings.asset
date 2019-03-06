@@ -32,4 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/VinegarRiceMinigame.unity
     guid: bec1ef6f9b591b745bbb7a8d58c82123
+  - enabled: 1
+    path: Assets/_Scenes/BreakfastRecipe.unity
+    guid: 560ea6f791efa9e4ca6de20c1e61a483
+  - enabled: 1
+    path: Assets/_Scenes/BreakfastMinigameDirections.unity
+    guid: 4fb3f0a2c571cbd4990069853201d216
+  - enabled: 1
+    path: Assets/_Scenes/SausageCutting.unity
+    guid: 71c6c508f1874c949a51465bae7e8147
   m_configObjects: {}
