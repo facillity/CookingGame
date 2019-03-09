@@ -34,7 +34,7 @@ public class GenerateNigiri : MonoBehaviour
         if (timer > 1f)
         {
             ClearText();
-            Debug.Log("here in timer");
+          //  Debug.Log("here in timer");
             GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("nigiri");
             for (int i = 0; i < gameObjects.Length; i++)
             {
@@ -52,7 +52,7 @@ public class GenerateNigiri : MonoBehaviour
         float salmonPosX = Random.Range(-5.84f, 7.4f);
       
         Instantiate(salmon, new Vector3(salmonPosX, -4.5f,0), Quaternion.identity);
-        Instantiate(rice, new Vector3(ricePosX,ricePosY,0), Quaternion.identity);
+        Instantiate(rice, new Vector3(ricePosX,ricePosY,1), Quaternion.identity);
         complete = false;
     }
 

@@ -10,8 +10,11 @@ TagManager:
   - progress
   - rice
   - nigiri
+HEAD
   - fryer slot
   - Board
+  - shrimp
+71af754e448013661f3919ae82b53ca56d822e27
   layers:
   - Default
   - TransparentFX
