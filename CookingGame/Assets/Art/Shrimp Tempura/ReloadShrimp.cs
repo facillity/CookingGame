@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ReloadShrimp : MonoBehaviour
 {
     public GameObject shrimp;
     private float timer = 0f;
-    public GameObject goodText, okText, perfectText, terribleText;
-    public GameObject shrimp1, shrimp2, shrimp3, shrimp4, shrimp5;
+    public Text scoreText;
+    public GameObject goodText, okText, perfectText, terribleText, winText;
+    public GameObject shrimp1, shrimp2, shrimp3, shrimp4, shrimp5, shrimp6, shrimp7, shrimp8, shrimp9, shrimp10;
+
+    private bool won = false;
 
     public static float fallSpeed = -1.5f;
 
@@ -37,7 +41,7 @@ public class ReloadShrimp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (nextShrimp)
+        if (nextShrimp && !won)
         {
             DisplayText();
             AddShrimpToPile();
@@ -45,14 +49,14 @@ public class ReloadShrimp : MonoBehaviour
             nextShrimp = false;
             shrimpTime = true;
         }
-        if (shrimpTime)
+        if (shrimpTime && !won)
         {
             timer += Time.deltaTime;
         }
-        if (timer > 1.5f && shrimpTime)
+        if (timer > 1.5f && shrimpTime && !won)
         {
             ClearText();
-            Debug.Log("here in timer");
+           // Debug.Log("here in timer");
             GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("shrimp");
             for (int i = 0; i < gameObjects.Length; i++)
             {
@@ -113,10 +117,12 @@ public class ReloadShrimp : MonoBehaviour
 
     void AddShrimpToPile()
     {
-        if (textDisplay == 1 || textDisplay == 0)
+        if ((textDisplay == 1 || textDisplay == 0) && !won)
         {
             shrimpCount += 1;
-            fallSpeed -= 1.5f;
+            Debug.Log(shrimpCount);
+            scoreText.text = "shrimp needed: " + (10 - shrimpCount).ToString();
+            fallSpeed -= 1.0f;
         }
 
         if (shrimpCount == 1)
@@ -129,5 +135,19 @@ public class ReloadShrimp : MonoBehaviour
             shrimp4.SetActive(true);
         else if (shrimpCount == 5)
             shrimp5.SetActive(true);
+        else if (shrimpCount == 6)
+            shrimp6.SetActive(true);
+        else if (shrimpCount == 7)
+            shrimp7.SetActive(true);
+        else if (shrimpCount == 8)
+            shrimp8.SetActive(true);
+        else if (shrimpCount == 9)
+            shrimp9.SetActive(true);
+        else if (shrimpCount == 10)
+        {
+            shrimp10.SetActive(true);
+            winText.SetActive(true);
+            won = true;
+        }
     }
 }

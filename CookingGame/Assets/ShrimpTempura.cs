@@ -16,7 +16,7 @@ public class ShrimpTempura : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)){
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
             float pos = gameObject.transform.position.y;
-            Debug.Log(pos);
+          //  Debug.Log(pos);
             if (pos < -1.25f && pos > -1.7f)
             {
                 ReloadShrimp.textDisplay = 2;
