@@ -10,6 +10,8 @@ TagManager:
   - progress
   - rice
   - nigiri
+  - fryer slot
+  - Board
   layers:
   - Default
   - TransparentFX
