@@ -9,6 +9,8 @@ public class ReloadShrimp : MonoBehaviour
     public GameObject goodText, okText, perfectText, terribleText;
     public GameObject shrimp1, shrimp2, shrimp3, shrimp4, shrimp5;
 
+    public static float fallSpeed = -1.5f;
+
     public static int textDisplay = 0;
     public static int shrimpCount = 0;
     private bool shrimpTime = false;
@@ -29,7 +31,7 @@ public class ReloadShrimp : MonoBehaviour
     private void GenerateShrimp()
     {
         nextShrimp = false;
-        Instantiate(shrimp, new Vector3(2.54f, 3f, 0), Quaternion.identity);
+        Instantiate(shrimp, new Vector3(2.54f, 3.4f, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -114,6 +116,7 @@ public class ReloadShrimp : MonoBehaviour
         if (textDisplay == 1 || textDisplay == 0)
         {
             shrimpCount += 1;
+            fallSpeed -= 1.5f;
         }
 
         if (shrimpCount == 1)

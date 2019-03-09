@@ -7,7 +7,7 @@ public class ShrimpTempura : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //this.GetComponent<Rigidbody2D>().velocity = Vector2.up * -2f;
+        this.GetComponent<Rigidbody2D>().velocity = Vector2.up * ReloadShrimp.fallSpeed;//-2f;
     }
 
     // Update is called once per frame
