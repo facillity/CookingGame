@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class RecipeScreenLogic : MonoBehaviour
+public class ShrimpRecipeLogic : MonoBehaviour
 {
     float timer = 0;
     public GameObject cm1;
@@ -57,16 +57,15 @@ public class RecipeScreenLogic : MonoBehaviour
 
         if (timer > 5f){
             if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 0){
-                //MiniGameDirectionsLogic.loadGameSalmonNigiri1();
-                SceneManager.LoadScene("MiniGameDirections");
+                SceneManager.LoadScene("ShrimpMiniGameDirections");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 1){
-                SceneManager.LoadScene("MiniGameDirections");
+                SceneManager.LoadScene("ShrimpMiniGameDirections");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 2){
-                SceneManager.LoadScene("MiniGameDirections");
+                SceneManager.LoadScene("ShrimpMiniGameDirections");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 3){
                 SceneManager.LoadScene("end_screens");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 4){
-                SceneManager.LoadScene("minigame1");
+                SceneManager.LoadScene("end_screens");
             }
             
         }

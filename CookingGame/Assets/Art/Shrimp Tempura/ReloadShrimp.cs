@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ReloadShrimp : MonoBehaviour
 {
     public GameObject shrimp;
     private float timer = 0f;
+    private float timer2 = 0f;
     public Text scoreText;
     public GameObject goodText, okText, perfectText, terribleText, winText;
     public GameObject shrimp1, shrimp2, shrimp3, shrimp4, shrimp5, shrimp6, shrimp7, shrimp8, shrimp9, shrimp10;
@@ -66,6 +68,15 @@ public class ReloadShrimp : MonoBehaviour
             timer = 0f;
             shrimpTime = false;
            
+        }
+
+        // win condition met
+        if (won){
+            timer2 += Time.deltaTime;
+            if (timer2 > 4f){
+                GameObject.Find("Progress").GetComponent<ProgressScript>().stage ++;
+                SceneManager.LoadScene("ShrimpRecipe");
+            }
         }
     }
 

@@ -113,11 +113,15 @@ public class ShelfFood : MonoBehaviour
 
     private void Reset()
     {
+        quantity.Clear();
         wrongItems = 0;
         loseText.gameObject.SetActive(false);
         winText.gameObject.SetActive(false);
         foodCount = 0;
         lives = 3;
+        for (int idx = 0; idx < 6; idx++){
+            quantity.Add(Random.Range(1, 4));
+        }
     }
 
     public static void CheckIfDone()

@@ -35,7 +35,7 @@ public class SausageCuttingLogic : MonoBehaviour
         endTimer = 0f;
         gameRunning = false;
         endState = false;
-        piecesLeft = 15;
+        piecesLeft = 10;
     }
 
     // Update is called once per frame
@@ -96,7 +96,8 @@ public class SausageCuttingLogic : MonoBehaviour
                 {
                     //GameObject.Find("Progress").GetComponent<ProgressScript>().stage++;
                     Debug.Log("LOADING MAIN MENU");
-                    SceneManager.LoadScene("_MainMenu");
+                    GameObject.Find("Progress").GetComponent<ProgressScript>().stage ++;
+                    SceneManager.LoadScene("BreakfastRecipe");
                 }
                 else
                 {

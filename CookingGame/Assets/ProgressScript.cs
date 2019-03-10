@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProgressScript : MonoBehaviour
 {
     public int stage;
+    public int dish;
 
     void Start(){
         //stage = 0;

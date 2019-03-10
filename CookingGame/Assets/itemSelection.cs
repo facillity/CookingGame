@@ -14,7 +14,17 @@ public class itemSelection : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().sprite = locked;
             return;
         }
-
+        if (sceneNum == 4){
+            GameObject.Find("Progress").GetComponent<ProgressScript>().dish = 0;
+            GameObject.Find("Progress").GetComponent<ProgressScript>().stage = 0;
+        } else if (sceneNum == 8){
+            GameObject.Find("Progress").GetComponent<ProgressScript>().dish = 2;
+            GameObject.Find("Progress").GetComponent<ProgressScript>().stage = 1;
+        } else if (sceneNum == 12){
+            GameObject.Find("Progress").GetComponent<ProgressScript>().dish = 1;
+            GameObject.Find("Progress").GetComponent<ProgressScript>().stage = 2;
+        }
+        //GameObject.Find("Progress").GetComponent<ProgressScript>().stage = 0;
         SceneManager.LoadScene(sceneNum);
     }
 

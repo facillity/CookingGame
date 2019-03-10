@@ -73,7 +73,7 @@ public class BreakfastRecipeLogic : MonoBehaviour
             if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 0)
             {
                 //MiniGameDirectionsLogic.loadGameSalmonNigiri1();
-                SceneManager.LoadScene("_MainMenu");
+                SceneManager.LoadScene("BreakfastMinigameDirections");
             }
             else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 1)
             {
@@ -81,7 +81,7 @@ public class BreakfastRecipeLogic : MonoBehaviour
             }
             else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 2)
             {
-                SceneManager.LoadScene("_MainMenu");
+                SceneManager.LoadScene("end_screens");
             }
             else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 3)
             {

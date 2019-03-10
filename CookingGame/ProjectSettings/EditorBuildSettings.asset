@@ -44,4 +44,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Minigame4.unity
     guid: 987d086ec72558143940a8c79a51e0b9
+  - enabled: 1
+    path: Assets/_Scenes/ShrimpRecipe.unity
+    guid: be1af221b05941d47bcfb8fb7b8143f4
+  - enabled: 1
+    path: Assets/_Scenes/ShrimpTempuraBatter.unity
+    guid: 459aba91f5ddf014ea384da85cde3b8b
+  - enabled: 1
+    path: Assets/_Scenes/ShrimpMiniGameDirections.unity
+    guid: 7fb9a9a6720700c4fb2d996043872b01
+  - enabled: 1
+    path: Assets/_Scenes/end_screens.unity
+    guid: cfceddbf3f7f898499c533c672e646f3
   m_configObjects: {}
