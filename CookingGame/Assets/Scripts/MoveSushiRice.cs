@@ -33,7 +33,7 @@ public class MoveSushiRice : MonoBehaviour
         if (transform.position.x < -9)
         {
             Destroy(gameObject);
-            if (ManageSushiRice.lives > 0)
+            if (ManageSushiRice.lives > 0 && !ManageSushiRice.won)
             {
                 ManageSushiRice.lives -= 1;
             }

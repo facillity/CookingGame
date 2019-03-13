@@ -172,6 +172,10 @@ public class PickUpItem : MonoBehaviour
             {
                 ManageBatter.salt = true;
             }
+            if (gameObject.CompareTag("water"))
+            {
+                ManageBatter.water = true;
+            }
            // GetComponent<ParticleSystem>().Stop();
 
 

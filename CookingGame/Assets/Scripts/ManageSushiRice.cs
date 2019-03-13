@@ -14,11 +14,11 @@ public class ManageSushiRice : MonoBehaviour
     private bool wait;
     public static int lives;
     public static int sushiLeft;
-    private bool won;
+    public static bool won;
     // Start is called before the first frame update
     void Start()
     {
-        sushiLeft = 3;
+        sushiLeft = 6;
         lives = 3;
         wait = false;
         waitTime = 0;

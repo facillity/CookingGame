@@ -21,6 +21,7 @@ TagManager:
   - conveyer
   - whisk
   - salt
+  - water
   layers:
   - Default
   - TransparentFX
