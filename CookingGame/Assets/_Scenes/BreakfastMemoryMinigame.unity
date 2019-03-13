@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 77594294}
   - component: {fileID: 77594293}
   m_Layer: 0
-  m_Name: minigame3_Sushirice
+  m_Name: minigame3_egg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,7 +166,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ecad6535418a22f468f9dfe8068dd4ef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 54e7847b015394f458c59662273e14c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -524,7 +524,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 902e5c1f06d2b1a498ecdec386b8a8ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 36a7747d61147ea40a1e1c8f17885f9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -543,7 +543,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624288655}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.41, y: -1.58, z: -1}
+  m_LocalPosition: {x: -0.14, y: -1.58, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -619,7 +619,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Add Rice
+  m_Text: Add Egg
 --- !u!222 &791985554
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -641,7 +641,7 @@ GameObject:
   - component: {fileID: 886406972}
   - component: {fileID: 886406971}
   m_Layer: 5
-  m_Name: AddVinegarButton
+  m_Name: AddSausageButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -708,7 +708,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1733514587}
-        m_MethodName: addVinegar
+        m_MethodName: addSausage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -909,7 +909,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Add Vinegar
+  m_Text: Add Sausage
 --- !u!222 &1242851586
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -952,7 +952,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17, y: -84}
+  m_AnchoredPosition: {x: 0.000011444, y: -159.5}
   m_SizeDelta: {x: 155.2, y: 64.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1361830428
@@ -1151,7 +1151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1585772970}
-  - component: {fileID: 1585772969}
+  - component: {fileID: 1585772971}
   m_Layer: 0
   m_Name: GameLogic
   m_TagString: Untagged
@@ -1159,7 +1159,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1585772969
+--- !u!4 &1585772970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585772968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.192448, y: 0.17980446, z: 9.830078}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1585772971
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1168,7 +1182,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1585772968}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1da0cdc21a0e76f4492f8f6b9c3fdcf0, type: 3}
+  m_Script: {fileID: 11500000, guid: bec2a578d1318234bb6b32635ebe90dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   arrow1: {fileID: 1916882608}
@@ -1188,25 +1202,11 @@ MonoBehaviour:
   leftBtn: {fileID: 886406971}
   rightBtn: {fileID: 1684832859}
   arrows: 
-  pot: {fileID: 624288656}
-  s1: {fileID: 21300000, guid: b27c2f1d859327240ab9cd4b7e6478a0, type: 3}
-  s2: {fileID: 21300000, guid: 36a2d20e8a8a43f4fbbf74ab8525e07a, type: 3}
-  s3: {fileID: 21300000, guid: e43587a16ca2b06438653ca27bc8c2d3, type: 3}
+  plate: {fileID: 624288656}
+  s1: {fileID: 21300000, guid: c5c5d7d44caa71240a1aff66d977fb27, type: 3}
+  s2: {fileID: 21300000, guid: 42eed4ab6f52c5348ac237a23e9b34bf, type: 3}
+  s3: {fileID: 21300000, guid: bfe0f5939e4d4234a96597b8821dcfe3, type: 3}
   endState: 0
---- !u!4 &1585772970
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585772968}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.192448, y: 0.17980446, z: 9.830078}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1684832857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,7 +1220,7 @@ GameObject:
   - component: {fileID: 1684832860}
   - component: {fileID: 1684832859}
   m_Layer: 5
-  m_Name: AddRiceButton
+  m_Name: AddEggButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1287,7 +1287,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1733514587}
-        m_MethodName: addRice
+        m_MethodName: addEgg
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1426,7 +1426,7 @@ GameObject:
   - component: {fileID: 1708143716}
   - component: {fileID: 1708143715}
   m_Layer: 0
-  m_Name: minigame3_vinegar
+  m_Name: minigame3_sausage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1469,7 +1469,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ec766af8776ef414eb62034a0a2692f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be236c3cdf32f284da4e43ab199ac670, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1488,7 +1488,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708143714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.8545794, y: -1.0824652, z: -1}
+  m_LocalPosition: {x: -4.8545794, y: -1.37, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1520,7 +1520,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1733514586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9333af32295d77f4d85dcb3a26dbcfab, type: 3}
+  m_Script: {fileID: 11500000, guid: db95102b11e35cd46931816471534f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1733514588
