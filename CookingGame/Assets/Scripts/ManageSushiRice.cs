@@ -18,9 +18,9 @@ public class ManageSushiRice : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sushiLeft = 7;
+        sushiLeft = 3;
         lives = 3;
-        wait = true;
+        wait = false;
         waitTime = 0;
         round = 1;
         count = 0;
@@ -29,6 +29,7 @@ public class ManageSushiRice : MonoBehaviour
         won = false;
       //  Invoke("RandomlyGenerateRice", 1f);
         roundText.text = "Round 1!";
+        Invoke("RandomlyGenerateRice", 1f);
     }
 
     // Update is called once per frame
@@ -72,7 +73,7 @@ public class ManageSushiRice : MonoBehaviour
                 }
                 else if (round == 1 && newRound)
                 {
-                    Invoke("RandomlyGenerateRice", 1f);
+                    //Invoke("RandomlyGenerateRice", 1f);
                     MoveSushiRice.speed = 2.5f;
                     wait = true;
                     space = 3.5f;
@@ -91,7 +92,7 @@ public class ManageSushiRice : MonoBehaviour
                     roundText.text = "Round 3!";
                     wait = true;
                     MoveSushiRice.speed = 5.5f;
-                    space = 3;
+                    space = 2;
                     newRound = false;
                 }
             }
