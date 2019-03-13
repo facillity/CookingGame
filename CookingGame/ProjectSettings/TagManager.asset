@@ -4,17 +4,23 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - shooter
-  - shelf
-  - hand
-  - progress
-  - rice
-  - nigiri
-HEAD
+  - shrimp
   - fryer slot
   - Board
-  - shrimp
-71af754e448013661f3919ae82b53ca56d822e27
+  - nigiri
+  - pour
+  - egg
+  - bowl
+  - crackedegg
+  - hand
+  - flour
+  - cornstarch
+  - shelf
+  - shooter
+  - salmon
+  - conveyer
+  - whisk
+  - salt
   layers:
   - Default
   - TransparentFX
@@ -24,12 +30,12 @@ HEAD
   - UI
   - 
   - 
-  - floor
-  - shelf
-  - falling
-  - hand
-  - cart
-  - shelfFood
+  - ingredients
+  - bowl
+  - salmon
+  - rice
+  - conveyer
+  - egg
   - 
   - 
   - 
