@@ -94,15 +94,9 @@ public class SausageCuttingLogic : MonoBehaviour
                 // get progress to add 1
                 if (piecesLeft <= 0)
                 {
-                    //GameObject.Find("Progress").GetComponent<ProgressScript>().stage++;
-                    Debug.Log("LOADING MAIN MENU");
-                    GameObject.Find("Progress").GetComponent<ProgressScript>().stage ++;
-                    SceneManager.LoadScene("BreakfastRecipe");
+                    GameObject.Find("Progress").GetComponent<ProgressScript>().stage++;
                 }
-                else
-                {
-                    SceneManager.LoadScene("BreakfastRecipe");
-                }
+                SceneManager.LoadScene("BreakfastRecipe");
             }
         }
     }
@@ -124,11 +118,11 @@ public class SausageCuttingLogic : MonoBehaviour
             else
             {
                 SoundEffects.GetComponent<SausageCuttingSoundScript>().PlaySoundEffect("error");
+                timer -= 1;
             }
 
             if (piecesLeft == 0)
             {
-                Debug.Log("IN HERE");
                 DashSprite.SetActive(false);
                 gameRunning = false;
                 endState = true;

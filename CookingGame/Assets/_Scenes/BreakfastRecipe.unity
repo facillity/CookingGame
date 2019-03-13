@@ -121,7 +121,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 244925289}
-  - component: {fileID: 244925288}
   - component: {fileID: 244925290}
   m_Layer: 0
   m_Name: Logic
@@ -130,23 +129,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &244925288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 244925287}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7be9155b945aefd45b052f16d29087e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cm1: {fileID: 1230957283}
-  cm2: {fileID: 1192010125}
-  cm3: {fileID: 1253054103}
-  cm4: {fileID: 1397376125}
-  text: {fileID: 852858470}
 --- !u!4 &244925289
 Transform:
   m_ObjectHideFlags: 0

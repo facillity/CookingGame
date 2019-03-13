@@ -81,15 +81,15 @@ public class BreakfastRecipeLogic : MonoBehaviour
             }
             else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 2)
             {
-                SceneManager.LoadScene("end_screens");
+                SceneManager.LoadScene("BreakfastMinigameDirections");
             }
             else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 3)
             {
-                SceneManager.LoadScene("_MainMenu");
+                SceneManager.LoadScene("BreakfastMinigameDirections");
             }
             else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 4)
             {
-                SceneManager.LoadScene("_MainMenu");
+                SceneManager.LoadScene("end_screens");
             }
 
         }
