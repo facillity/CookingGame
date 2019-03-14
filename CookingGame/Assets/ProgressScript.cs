@@ -6,8 +6,10 @@ public class ProgressScript : MonoBehaviour
 {
     public int stage;
     public int dish;
+    public static bool cheats;
 
     void Start(){
+        cheats = false;
         //stage = 0;
     }
 

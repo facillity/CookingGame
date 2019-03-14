@@ -64,9 +64,9 @@ public class RecipeScreenLogic : MonoBehaviour
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 2){
                 SceneManager.LoadScene("MiniGameDirections");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 3){
-                SceneManager.LoadScene("end_screens");
+                SceneManager.LoadScene("MiniGameDirections");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 4){
-                SceneManager.LoadScene("minigame1");
+                SceneManager.LoadScene("end_screens");
             }
             
         }

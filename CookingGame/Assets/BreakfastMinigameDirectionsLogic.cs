@@ -15,6 +15,7 @@ public class BreakfastMinigameDirectionsLogic : MonoBehaviour
     public Sprite breakfast1;
     public Sprite breakfast2;
     public Sprite breakfast3;
+    public Sprite breakfast4;
 
     void Update(){
         if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 0){
@@ -40,7 +41,7 @@ public class BreakfastMinigameDirectionsLogic : MonoBehaviour
         if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 2){
             gameTitle.text = "Cracking Eggs";
             gameDescription.text = "Hold the space bar until the meter reaches green and then release for perfectly cracked eggs!";
-            gameImage.GetComponent<Image>().sprite = breakfast2;
+            gameImage.GetComponent<Image>().sprite = breakfast3;
             Keyboard.SetActive(true);
             Mouse.SetActive(false);
             ArrowKeys.SetActive(false);
@@ -49,7 +50,7 @@ public class BreakfastMinigameDirectionsLogic : MonoBehaviour
         if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 3){
             gameTitle.text = "Sausage & Eggs";
             gameDescription.text = "Pay attention to the order of the arrows that come out on the screen! Repeat them to fill up the plate!";
-            gameImage.GetComponent<Image>().sprite = breakfast2;
+            gameImage.GetComponent<Image>().sprite = breakfast4;
             Keyboard.SetActive(false);
             Mouse.SetActive(true);
             ArrowKeys.SetActive(false);

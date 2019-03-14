@@ -282,7 +282,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -191, y: 185}
+  m_AnchoredPosition: {x: -191, y: 217.00002}
   m_SizeDelta: {x: 256.4, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &470753308
@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -663,7 +663,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 26.5}
+  m_AnchoredPosition: {x: 4, y: 58.50002}
   m_SizeDelta: {x: 394.7, y: 62.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &919495481
@@ -996,6 +996,7 @@ MonoBehaviour:
   roundText: {fileID: 919495481}
   livesText: {fileID: 1652381446}
   sushiLeftText: {fileID: 470753308}
+  doOnce: 1
 --- !u!82 &1247773059
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1713,7 +1714,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 273, y: 185}
+  m_AnchoredPosition: {x: 273, y: 217}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1652381446

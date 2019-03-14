@@ -15,6 +15,7 @@ public class MiniGameDirectionsLogic : MonoBehaviour
     public Sprite salmonNigiri1;
     public Sprite salmonNigiri2;
     public Sprite salmonNigiri3;
+    public Sprite salmonNigiri4;
 
     void Update(){
         if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 0){
@@ -44,6 +45,15 @@ public class MiniGameDirectionsLogic : MonoBehaviour
             ArrowKeys.SetActive(false);
         }
 
+        if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 3){
+            gameTitle.text = "Combining";
+            gameDescription.text = "Take pieces of salmon from the plate and put them onto the rice thats coming in from the top conveyer belt. Then, grab the created sushi and place it on the opposite belt!";
+            gameImage.GetComponent<Image>().sprite = salmonNigiri4;
+            Keyboard.SetActive(false);
+            Mouse.SetActive(true);
+            ArrowKeys.SetActive(false);
+        }
+
         if (Input.GetKeyDown("space")){
             if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 0){
                 SceneManager.LoadScene("minigame1");
@@ -51,6 +61,8 @@ public class MiniGameDirectionsLogic : MonoBehaviour
                 SceneManager.LoadScene("SalmonCutting");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 2){
                 SceneManager.LoadScene("VinegarRiceMinigame");
+            } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 3){
+                SceneManager.LoadScene("Minigame3");
             }
         }
     }

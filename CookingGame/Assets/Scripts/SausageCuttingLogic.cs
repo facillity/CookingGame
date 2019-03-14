@@ -41,6 +41,11 @@ public class SausageCuttingLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ProgressScript.cheats && Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.C)){
+            Debug.Log("SKIPPED.");
+            endState = true;
+            piecesLeft = 0;
+        }
         if (timer <= 37 && timer > 36)
         {
             text4.text = "Ready";

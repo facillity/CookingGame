@@ -56,6 +56,11 @@ public class GameLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ProgressScript.cheats && Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.C)){
+            Debug.Log("SKIPPED.");
+            endState = true;
+            wordsLeft = 0;
+        }
         if (timer <= 60 && !doOnce){
             doOnce = true;
             spawnWord();

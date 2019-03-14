@@ -37,7 +37,10 @@ public class EggCrackLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (ProgressScript.cheats && Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.C)){
+            Debug.Log("SKIPPED.");
+            winState = true;
+        }
         if (animationTimer >= 0)
         {
             animationTimer -= Time.deltaTime;

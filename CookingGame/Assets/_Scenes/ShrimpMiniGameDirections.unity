@@ -149,7 +149,7 @@ MonoBehaviour:
   Mouse: {fileID: 386093585}
   ArrowKeys: {fileID: 1465070596}
   shrimp1: {fileID: 0}
-  shrimp2: {fileID: 0}
+  shrimp2: {fileID: 21300000, guid: bbc0b026ca606d1439918fcd32087022, type: 3}
   shrimp3: {fileID: 21300000, guid: fb648cdb80519af409ce1a780b1341f9, type: 3}
 --- !u!114 &334858332
 MonoBehaviour:
@@ -172,6 +172,7 @@ MonoBehaviour:
   breakfast1: {fileID: 21300000, guid: 6e5bfafa722ec934ba1282be1966ad75, type: 3}
   breakfast2: {fileID: 21300000, guid: 6e5bfafa722ec934ba1282be1966ad75, type: 3}
   breakfast3: {fileID: 21300000, guid: 6e5bfafa722ec934ba1282be1966ad75, type: 3}
+  breakfast4: {fileID: 0}
 --- !u!4 &334858333
 Transform:
   m_ObjectHideFlags: 0

@@ -69,6 +69,13 @@ public class BreakfastMemoryGameLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ProgressScript.cheats && Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.C)){
+            Debug.Log("SKIPPED.");
+            timer = 0;
+            timer2 = 0;
+            endState = true;
+            lives = 3;
+        }
         if (!pauseTimer)
         {
             timer += Time.deltaTime;

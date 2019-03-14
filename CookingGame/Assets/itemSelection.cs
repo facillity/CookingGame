@@ -22,7 +22,7 @@ public class itemSelection : MonoBehaviour
             GameObject.Find("Progress").GetComponent<ProgressScript>().stage = 1;
         } else if (sceneNum == 12){
             GameObject.Find("Progress").GetComponent<ProgressScript>().dish = 1;
-            GameObject.Find("Progress").GetComponent<ProgressScript>().stage = 2;
+            GameObject.Find("Progress").GetComponent<ProgressScript>().stage = 1;
         }
         //GameObject.Find("Progress").GetComponent<ProgressScript>().stage = 0;
         SceneManager.LoadScene(sceneNum);

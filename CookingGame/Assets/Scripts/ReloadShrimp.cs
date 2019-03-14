@@ -43,6 +43,10 @@ public class ReloadShrimp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ProgressScript.cheats && Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.C)){
+            Debug.Log("SKIPPED");
+            won = true;
+        }
         if (nextShrimp && !won)
         {
             DisplayText();

@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ManageBatter : MonoBehaviour
 {
     public static bool done, stir;
+    public float endTimer=0f;
     public static bool flour, cornstarch, salt, egg, water;
     public GameObject mix;
     public Text text;
+    private bool cheated = false;
     private float time;
     private bool displayText;
     // Start is called before the first frame update
@@ -28,6 +31,10 @@ public class ManageBatter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ProgressScript.cheats && Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.C)){
+            Debug.Log("SKIPPED");
+            cheated = true;
+        }
         if (displayText)
         {
             time += Time.deltaTime;
@@ -46,10 +53,15 @@ public class ManageBatter : MonoBehaviour
             displayText = true;
             
         }
-        if (MixBatter.doneMixing)
+        if (MixBatter.doneMixing || cheated)
         {
             text.text = "This batter looks great!";
-            // move on to next game
+            endTimer += Time.deltaTime;
+            if (endTimer > 5f){
+                GameObject.Find("Progress").GetComponent<ProgressScript>().stage++;
+                cheated = false;
+                SceneManager.LoadScene("ShrimpRecipe");
+            }
         }
     }
 }

@@ -28,6 +28,7 @@ public class MoveHand : MonoBehaviour
         {
             moveDown();
         }
+        
     }
 
     private void FixedUpdate()

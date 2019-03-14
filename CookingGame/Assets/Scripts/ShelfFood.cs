@@ -10,6 +10,7 @@ public class ShelfFood : MonoBehaviour
     public GameObject foodItem;
     private float[] shelfPositions;
     private float timer;
+    private bool cheated = false;
 
     List<GameObject> foodList;
     public static string[] shoppingList; // put items needed here
@@ -51,6 +52,7 @@ public class ShelfFood : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cheated = false;
         shelfPositions = new float[3] { 3.16f, 1.45f, -.5f };
         foodCount = 0;
         //food = new GameObject[25];
@@ -69,14 +71,20 @@ public class ShelfFood : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ProgressScript.cheats && Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.C)){
+            Debug.Log("SKIPPED.");
+            cheated = true;
+            doneShopping = true;
+        }
         // Debug.Log(quantity);
        UpdateLives();
-       if (doneShopping)
+       if (doneShopping || cheated)
         {
             
             //Debug.Log("done");
             winText.gameObject.SetActive(true);
             timer += Time.deltaTime;
+            //Debug.Log(timer);
             if (timer > 7f)
             {
                 Reset();
@@ -85,7 +93,7 @@ public class ShelfFood : MonoBehaviour
             }
             //Destroy(gameObject) ;
         }
-       else if (wrongItems >= 3 && !doneShopping)
+       else if (wrongItems >= 3 && !doneShopping && !cheated)
         {
             Debug.Log("3 wrong items");
             loseText.gameObject.SetActive(true);
@@ -113,6 +121,7 @@ public class ShelfFood : MonoBehaviour
 
     private void Reset()
     {
+        cheated = false;
         quantity.Clear();
         wrongItems = 0;
         loseText.gameObject.SetActive(false);
@@ -122,6 +131,7 @@ public class ShelfFood : MonoBehaviour
         for (int idx = 0; idx < 6; idx++){
             quantity.Add(Random.Range(1, 4));
         }
+        timer = 0f;
     }
 
     public static void CheckIfDone()

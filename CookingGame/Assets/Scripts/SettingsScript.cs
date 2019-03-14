@@ -8,6 +8,7 @@ public class SettingsScript : MonoBehaviour
     public GameObject kitchen;
     public GameObject settings;
     public Button btn_back;
+    public Button cheats;
 
     // Start is called before the first frame update
     void OnMouseDown(){
@@ -15,5 +16,6 @@ public class SettingsScript : MonoBehaviour
         kitchen.SetActive(false);
         settings.SetActive(true);
         btn_back.gameObject.SetActive(true);
+        cheats.gameObject.SetActive(true);
     }
 }

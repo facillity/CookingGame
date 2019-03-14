@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class ManageSushiRice : MonoBehaviour
 {
     public GameObject rice;
@@ -15,9 +16,29 @@ public class ManageSushiRice : MonoBehaviour
     public static int lives;
     public static int sushiLeft;
     public static bool won;
+    public bool doOnce = true;
+
+    private float timer2;
     // Start is called before the first frame update
     void Start()
     {
+    //     timer2 = 0;
+    //     sushiLeft = 6;
+    //     lives = 3;
+    //     wait = false;
+    //     waitTime = 0;
+    //     round = 1;
+    //     count = 0;
+    //     space = 4;
+    //     newRound = true;
+    //     won = false;
+    //   //  Invoke("RandomlyGenerateRice", 1f);
+    //     roundText.text = "Round 1!";
+    //     Invoke("RandomlyGenerateRice", 1f);
+    }
+
+    void Reset(){
+        timer2 = 0;
         sushiLeft = 6;
         lives = 3;
         wait = false;
@@ -29,21 +50,42 @@ public class ManageSushiRice : MonoBehaviour
         won = false;
       //  Invoke("RandomlyGenerateRice", 1f);
         roundText.text = "Round 1!";
-        Invoke("RandomlyGenerateRice", 1f);
+        Invoke("RandomlyGenerateRice", 1f);    
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        if (doOnce){
+            Reset();
+            doOnce = false;
+        }
+        if (ProgressScript.cheats && Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.C)){
+            Debug.Log("SKIPPED.");
+            won = true;
+            lives = 3;
+        }
         livesText.text = "Lives: " + lives.ToString();
         sushiLeftText.text = "Pieces left: " + sushiLeft.ToString();
         if (won)
         {
             roundText.text = "Great job!";
+            timer2 += Time.deltaTime;
+            if (timer2 > 5){
+                doOnce = true;
+                GameObject.Find("Progress").GetComponent<ProgressScript>().stage++;
+                SceneManager.LoadScene("SalmonNigiriRecipe");
+            }
         }
         else if (lives <= 0)
         {
             roundText.text = "You failed..";
+            timer2 += Time.deltaTime;
+            if (timer2 > 5){
+                doOnce = true;
+                SceneManager.LoadScene("SalmonNigiriRecipe");
+            }
         }
         else //if (lives > 0 && !won)
         {
