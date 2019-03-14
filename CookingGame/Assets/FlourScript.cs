@@ -13,12 +13,12 @@ public class FlourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && this.transform.parent.GetComponent<PickUpItem>().pour == true)
+        if (Input.GetMouseButtonDown(0) && this.transform.parent.GetComponent<PickUpItem>().pour == true)
         {
             GetComponent<ParticleSystem>().Play();
             // GetComponent<ParticleSystem>().emissionRate = 10;
         }
-        if (Input.GetKeyUp(KeyCode.Space) && this.transform.parent.GetComponent<PickUpItem>().pour == true)
+        if (Input.GetMouseButtonUp(0) && this.transform.parent.GetComponent<PickUpItem>().pour == true)
         {
             GetComponent<ParticleSystem>().Stop();
         }

@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1767974752}
   - component: {fileID: 1767974750}
   - component: {fileID: 1767974751}
-  m_Layer: 13
-  m_Name: kitchen_pepper2
+  m_Layer: 15
+  m_Name: pepper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

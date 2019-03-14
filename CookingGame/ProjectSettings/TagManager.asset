@@ -22,6 +22,7 @@ TagManager:
   - whisk
   - salt
   - water
+  - progress
   layers:
   - Default
   - TransparentFX
@@ -37,10 +38,10 @@ TagManager:
   - rice
   - conveyer
   - egg
-  - 
-  - 
-  - 
-  - 
+  - falling
+  - food
+  - hand
+  - shelf
   - 
   - 
   - 

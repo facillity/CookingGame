@@ -41,7 +41,7 @@ public class MoveItem : MonoBehaviour
         bool badItem = true;
         if (collision.gameObject.CompareTag("hand"))
         {
-            gameObject.layer = 10; // i created a layer called "falling" which is index 10 of the layers
+            gameObject.layer = 14; // i created a layer called "falling" which is index 14 of the layers
             isHit = true;    
 
             for (int i = 0; i < shopList.Length; i++)

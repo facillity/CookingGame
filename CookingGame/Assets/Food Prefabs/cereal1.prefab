@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7615166930858765733}
   - component: {fileID: 7615166930858765730}
   - component: {fileID: 850450067687704809}
-  m_Layer: 13
-  m_Name: kitchen_cereal2
+  m_Layer: 15
+  m_Name: cereal1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
