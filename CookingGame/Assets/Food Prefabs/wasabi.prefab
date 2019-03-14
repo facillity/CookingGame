@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2912314773159710941}
   - component: {fileID: 2912314773159710882}
   - component: {fileID: 2912314773159710883}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: wasabi
   m_TagString: Untagged
   m_Icon: {fileID: 0}

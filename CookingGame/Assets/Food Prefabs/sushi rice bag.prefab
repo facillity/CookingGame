@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1365977944504744114}
   - component: {fileID: 1365977944504744115}
   - component: {fileID: 1365977944504744112}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: sushi rice bag
   m_TagString: Untagged
   m_Icon: {fileID: 0}

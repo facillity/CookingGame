@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1368148253429973574}
   - component: {fileID: 1368148253429973575}
   - component: {fileID: 1368148253429973568}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: soy sauce
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -22,6 +22,7 @@ public class MixBatter : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log("clicked!");
             clicked++;
             if(!doneMixing && clicked == 5)
             {

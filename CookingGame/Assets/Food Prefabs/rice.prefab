@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4239452677512719607}
   - component: {fileID: 4239452677512719560}
   - component: {fileID: 4239452677512719561}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: rice
   m_TagString: Untagged
   m_Icon: {fileID: 0}

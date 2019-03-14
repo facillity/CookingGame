@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3558099486000508388}
   - component: {fileID: 3558099486000508389}
   - component: {fileID: 1704480139718350073}
-  m_Layer: 13
-  m_Name: kitchen_pie
+  m_Layer: 15
+  m_Name: pie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

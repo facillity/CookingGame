@@ -3,9 +3,8 @@
 --- !u!1 &452875279060381896
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4077053455178889322, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-    type: 3}
-  m_PrefabInstance: {fileID: 4529624168236599458}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -14,8 +13,8 @@ GameObject:
   - component: {fileID: 2954408412961832151}
   - component: {fileID: 8004342800989434698}
   - component: {fileID: 2513961758810654199}
-  m_Layer: 13
-  m_Name: kitchen_salt4
+  m_Layer: 15
+  m_Name: salt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,9 +23,8 @@ GameObject:
 --- !u!4 &2835859501567897853
 Transform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1839309366094379103, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-    type: 3}
-  m_PrefabInstance: {fileID: 4529624168236599458}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452875279060381896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -39,9 +37,8 @@ Transform:
 --- !u!212 &2727274909911787977
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1947049525170725227, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-    type: 3}
-  m_PrefabInstance: {fileID: 4529624168236599458}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452875279060381896}
   m_Enabled: 1
@@ -88,9 +85,8 @@ SpriteRenderer:
 --- !u!61 &2954408412961832151
 BoxCollider2D:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1719354586072331381, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-    type: 3}
-  m_PrefabInstance: {fileID: 4529624168236599458}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452875279060381896}
   m_Enabled: 1
@@ -116,9 +112,8 @@ BoxCollider2D:
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 5893336630599252968, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-    type: 3}
-  m_PrefabInstance: {fileID: 4529624168236599458}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452875279060381896}
   m_BodyType: 0
@@ -137,9 +132,8 @@ Rigidbody2D:
 --- !u!114 &2513961758810654199
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 2035371708467580245, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-    type: 3}
-  m_PrefabInstance: {fileID: 4529624168236599458}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452875279060381896}
   m_Enabled: 1
@@ -147,82 +141,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 382cef29afa3a974ba77d6d28439bce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &4529624168236599458
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4077053455178889322, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-        type: 3}
-      propertyPath: m_Name
-      value: kitchen_salt4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4077053455178889322, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4077053455178889322, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-        type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839309366094379103, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839309366094379103, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839309366094379103, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839309366094379103, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839309366094379103, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839309366094379103, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839309366094379103, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839309366094379103, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839309366094379103, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839309366094379103, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839309366094379103, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f0a21a710e9ac74ea3b6d6522ee68ba, type: 3}

@@ -23,6 +23,7 @@ public class PickUpItem : MonoBehaviour
     private bool stopMovement = false;
     private bool speedChange = false;
     private bool mixed = false;
+    private bool turned = false;
     private float turn = 90f;
 
 
@@ -86,6 +87,7 @@ public class PickUpItem : MonoBehaviour
             }
             if (gameObject.CompareTag("whisk") && ManageBatter.done && !mixed)
             {
+                Debug.Log("whisk here");
                 ManageBatter.stir = true;
                 mix.SetActive(true);
                 GameObject[] egg;
@@ -95,7 +97,6 @@ public class PickUpItem : MonoBehaviour
             }
             if (gameObject.CompareTag("nigiri") && hit.Length >= 2 && hit[1].collider.gameObject.CompareTag("conveyer"))
             {
-                Debug.Log("SPEED CHANGE");
                 if (!speedChange)
                 {
                     ManageSushiRice.sushiLeft -= 1;
@@ -107,7 +108,7 @@ public class PickUpItem : MonoBehaviour
                 }
           
             }
-            else if (!gameObject.CompareTag("salmon") && !gameObject.CompareTag("nigiri") && !(gameObject.CompareTag("whisk") && ManageBatter.done))
+            else if (!turned && !gameObject.CompareTag("salmon") && !gameObject.CompareTag("nigiri") && !(gameObject.CompareTag("whisk") && ManageBatter.done))
             {
                 rb.isKinematic = false;
                 isPickedUp = false;
@@ -131,6 +132,7 @@ public class PickUpItem : MonoBehaviour
         }
         else if (Input.GetMouseButtonDown(1) && !gameObject.CompareTag("egg"))
         {
+            turned = !turned;
             hit = Physics2D.RaycastAll(mousePos2D, Vector2.zero);
             if (gameObject.CompareTag("whisk"))
             {
@@ -157,9 +159,8 @@ public class PickUpItem : MonoBehaviour
             
     
         }
-        if (Input.GetKeyUp(KeyCode.Space) && pour)
+        if (turned && Input.GetMouseButtonUp(0) && pour)
         {
-            Debug.Log("space");
             if (gameObject.CompareTag("flour"))
             {
                 ManageBatter.flour = true;
