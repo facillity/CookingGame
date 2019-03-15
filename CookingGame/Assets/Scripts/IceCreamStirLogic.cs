@@ -8,14 +8,18 @@ public class IceCreamStirLogic : MonoBehaviour
     int fuckUpTimeStart;
     int lenience;
     int lives;
+    float progress;
     public GameObject ProgBar;
-    public GameObject GameOverUI;
+    public Text GameOverUI;
+    public Text WinText; 
     public Text livesCounter;
+    public Text progText;
 
     private void Awake()
     {
-        lenience = 2;
+        lenience = 3;
         lives = 3;
+        progress = 0;
     }
     // Start is called before the first frame update
     void Start()
@@ -35,13 +39,30 @@ public class IceCreamStirLogic : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (transform.localScale.x <= 0)
+        checkIfDone();
+        if (ProgBar.transform.localScale.x <= 0)
         {
             LoseLifeWithCooldown();
         }
-        if (ProgBar.transform.localScale.x >= 95)
+        else if (ProgBar.transform.localScale.x >= 95)
         {
             LoseLifeWithCooldown();
+        }
+        else
+        {
+            progress += 0.2F;
+            int intProg = (int)progress;
+            progText.text = "Progress: " + intProg.ToString() + "%";
+        }
+        
+    }
+
+    void checkIfDone()
+    {
+        if(progress >= 100)
+        {
+            Time.timeScale = 0;
+            WinText.gameObject.SetActive(true);
         }
     }
 
