@@ -100,6 +100,7 @@ MonoBehaviour:
   burntSprite: {fileID: 21300000, guid: a498cce70d1d4894d89981012680e3a3, type: 3}
   progressBar: {fileID: 6984899416753550354}
   gameManager: {fileID: 0}
+  audio: {fileID: 0}
   isBurnt: 0
   isFinished: 0
 --- !u!70 &8944221534605665093

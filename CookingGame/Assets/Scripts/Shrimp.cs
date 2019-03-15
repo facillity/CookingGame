@@ -10,6 +10,7 @@ public class Shrimp : MonoBehaviour
     public Sprite burntSprite;
     public GameObject progressBar;
     public GameObject gameManager;
+    public GameObject audio;
     Vector3 mousePos;
     Vector2 mousePos2D;
     Vector2 InitPos;
@@ -62,15 +63,14 @@ public class Shrimp : MonoBehaviour
             else if (isCooked && hit.Length>=2 && hit[0].collider.gameObject.CompareTag("Board"))
             {
                 isPickedUp = false;
-                if (!isBurnt)
-                {
-                    isFinished = true;
-                }
+                isFinished = true;
             }
         }
         if(isCooking)
         {
+            audio.gameObject.SetActive(true);
             cook(initCookTime);
+            
         }
         if(isPickedUp)
         {

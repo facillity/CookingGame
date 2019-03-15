@@ -7,7 +7,8 @@ public class ShrimpSpawner : MonoBehaviour
 {
     public Text Timer;
     public Text LivesLeft;
-    public GameObject GameOverUI;
+    public Text winText;
+    public Text GameOverUI;
     public float SpawnMaxX;
     public float SpawnMaxY;
     public float SpawnMinX;
@@ -54,6 +55,7 @@ public class ShrimpSpawner : MonoBehaviour
         if (checkIfFinished())
         {
             Time.timeScale = 0;
+            winText.gameObject.SetActive(true);
         }
         else if (lives<=0 || timeLeft<=0)
         {
