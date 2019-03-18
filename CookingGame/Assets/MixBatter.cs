@@ -24,7 +24,7 @@ public class MixBatter : MonoBehaviour
         {
             Debug.Log("clicked!");
             clicked++;
-            if(!doneMixing && clicked == 5)
+            if(!doneMixing && clicked == 3)
             {
                 gameObject.GetComponent<Renderer>().material.color = new Color(1, green[mixAmount]/255, blue[mixAmount]/255);
                 mixAmount++;

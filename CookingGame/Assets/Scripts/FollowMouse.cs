@@ -15,7 +15,6 @@ public class FollowMouse : MonoBehaviour
     void Update()
     {
         mousePosition = Input.mousePosition;
-        //mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         gameObject.transform.position = new Vector3(mousePosition.x, mousePosition.y, mousePosition.z);
     }
 }

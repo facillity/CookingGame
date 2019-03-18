@@ -51,7 +51,6 @@ public class MoveItem : MonoBehaviour
                     badItem = false;
                     ShelfFood.quantity[i] -= 1;
                     ShelfFood.CheckIfDone();
-                    //Debug.Log("hit");
                 }
             }
             if (badItem && !ShelfFood.doneShopping)

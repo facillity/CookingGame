@@ -62,7 +62,6 @@ public class ReloadShrimp : MonoBehaviour
         if (timer > 1.5f && shrimpTime && !won)
         {
             ClearText();
-           // Debug.Log("here in timer");
             GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("shrimp");
             for (int i = 0; i < gameObjects.Length; i++)
             {

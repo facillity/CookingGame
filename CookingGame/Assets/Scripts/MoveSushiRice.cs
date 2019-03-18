@@ -8,7 +8,6 @@ public class MoveSushiRice : MonoBehaviour
     private bool isHit;
     public static float speed = 2f;
     public bool left;
-    //private string[] shopList;
     // Start is called before the first frame update
     void Start()
     {

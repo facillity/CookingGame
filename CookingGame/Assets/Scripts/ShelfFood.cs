@@ -14,7 +14,6 @@ public class ShelfFood : MonoBehaviour
 
     List<GameObject> foodList;
     public static string[] shoppingList; // put items needed here
-    //public static int[] quantity;  // put quantity of items needed (match index from shopping list above)
     public static List<int> quantity = new List<int>();
     public static int wrongItems = 0;
     
@@ -81,17 +80,14 @@ public class ShelfFood : MonoBehaviour
        if (doneShopping || cheated)
         {
             
-            //Debug.Log("done");
             winText.gameObject.SetActive(true);
             timer += Time.deltaTime;
-            //Debug.Log(timer);
             if (timer > 7f)
             {
                 Reset();
                 GameObject.Find("Progress").GetComponent<ProgressScript>().stage++;
                 SceneManager.LoadScene("SalmonNigiriRecipe");
             }
-            //Destroy(gameObject) ;
         }
        else if (wrongItems >= 3 && !doneShopping && !cheated)
         {
@@ -103,7 +99,6 @@ public class ShelfFood : MonoBehaviour
                 Reset();
                 SceneManager.LoadScene("SalmonNigiriRecipe");
             }
-            //Destroy(gameObject);
         }
         else
         {

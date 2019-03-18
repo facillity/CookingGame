@@ -22,19 +22,6 @@ public class ManageSushiRice : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    //     timer2 = 0;
-    //     sushiLeft = 6;
-    //     lives = 3;
-    //     wait = false;
-    //     waitTime = 0;
-    //     round = 1;
-    //     count = 0;
-    //     space = 4;
-    //     newRound = true;
-    //     won = false;
-    //   //  Invoke("RandomlyGenerateRice", 1f);
-    //     roundText.text = "Round 1!";
-    //     Invoke("RandomlyGenerateRice", 1f);
     }
 
     void Reset(){
@@ -48,7 +35,6 @@ public class ManageSushiRice : MonoBehaviour
         space = 4;
         newRound = true;
         won = false;
-      //  Invoke("RandomlyGenerateRice", 1f);
         roundText.text = "Round 1!";
         Invoke("RandomlyGenerateRice", 1f);    
     }
@@ -108,14 +94,11 @@ public class ManageSushiRice : MonoBehaviour
                         won = true;
                     }
                     round++;
-                    sushiLeft = 7;
-                    Debug.Log("round " + round.ToString());
-                    sushiLeft = 7;
+                    sushiLeft = 6;
                     newRound = true;
                 }
                 else if (round == 1 && newRound)
                 {
-                    //Invoke("RandomlyGenerateRice", 1f);
                     MoveSushiRice.speed = 2.5f;
                     wait = true;
                     space = 3.5f;
@@ -134,7 +117,7 @@ public class ManageSushiRice : MonoBehaviour
                     roundText.text = "Round 3!";
                     wait = true;
                     MoveSushiRice.speed = 5.5f;
-                    space = 2;
+                    space = 2.5f;
                     newRound = false;
                 }
             }
@@ -149,7 +132,7 @@ public class ManageSushiRice : MonoBehaviour
 
     void RandomlyGenerateRice()
     {
-        float randomInterval = space;//4f; // Random.Range(1f, 4f);  // can change this random time interval
+        float randomInterval = space;
         GenerateRice();
         Invoke("RandomlyGenerateRice", randomInterval);      
     }
@@ -157,6 +140,5 @@ public class ManageSushiRice : MonoBehaviour
     void GenerateRice()
     {
         Instantiate(rice, new Vector3(10f, 1.68f, 1), Quaternion.identity);
-       // count++;
     }
 }

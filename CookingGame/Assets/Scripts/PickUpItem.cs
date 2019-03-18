@@ -30,14 +30,10 @@ public class PickUpItem : MonoBehaviour
 
     void Start()
     {
-        //InitPos = new Vector2(Random.Range(3f, 5f), Random.Range(3f, 5f));
-        //this.transform.position = InitPos;
         rb = GetComponent<Rigidbody2D>();
         if (!this.gameObject.CompareTag("crackedegg"))
             rb.isKinematic = true;
         pour = false;
-
-       // GetComponent<ParticleSystem>().emissionRate = 0;
   
     }  
 
@@ -74,20 +70,18 @@ public class PickUpItem : MonoBehaviour
                 Debug.Log(hit[1].collider.gameObject.tag);
             if (gameObject.CompareTag("salmon") && hit.Length >= 2 && hit[1].collider.gameObject.CompareTag("nigiri"))
             {
-               // Debug.Log("here parent");
                 rb.isKinematic = true;
                 Destroy(gameObject.GetComponent<BoxCollider2D>());
 
                 hit[0].transform.position = new Vector3(hit[1].transform.position.x - .12f, hit[1].transform.position.y + .689f, -1);
-                hit[0].transform.parent = hit[1].transform;//hit[0].collider.gameObject.transform.parent = hit[1].collider.gameObject.transform;
+                hit[0].transform.parent = hit[1].transform;
                 hit[1].transform.gameObject.AddComponent<PickUpItem>();
-              //  hit[1].transform.gameObject.GetComponent<MoveSushiRice>().speed = -hit[1].transform.gameObject.GetComponent<MoveSushiRice>().speed;
+
                 stopMovement = true;
                 isPickedUp = false;
             }
             if (gameObject.CompareTag("whisk") && ManageBatter.done && !mixed)
             {
-                Debug.Log("whisk here");
                 ManageBatter.stir = true;
                 mix.SetActive(true);
                 GameObject[] egg;
@@ -104,7 +98,6 @@ public class PickUpItem : MonoBehaviour
                     gameObject.GetComponent<MoveSushiRice>().left = false; 
                     speedChange = true;
                     isPickedUp = false;
-                //    pour = false;
                 }
           
             }
@@ -112,13 +105,10 @@ public class PickUpItem : MonoBehaviour
             {
                 rb.isKinematic = false;
                 isPickedUp = false;
-            //    pour = false;
             }
             Debug.Log(ManageBatter.done);
 
 
-
-            //  hit = Physics2D.RaycastAll(mousePos2D, Vector2.zero);
             if (gameObject.CompareTag("egg") && hit.Length >= 2 && hit[1].collider.gameObject.CompareTag("bowl"))
             {
                 GameObject newObject = (GameObject)EditorUtility.InstantiatePrefab(newGameObject);
@@ -130,7 +120,7 @@ public class PickUpItem : MonoBehaviour
 
 
         }
-        else if (Input.GetMouseButtonDown(1) && !gameObject.CompareTag("egg"))
+        else if (Input.GetMouseButtonDown(1) && !gameObject.CompareTag("egg") && isPickedUp)
         {
             turned = !turned;
             hit = Physics2D.RaycastAll(mousePos2D, Vector2.zero);
@@ -152,13 +142,7 @@ public class PickUpItem : MonoBehaviour
         {
             this.transform.position = new Vector3(mousePos2D.x, mousePos2D.y, z);// mousePos2D;
         }
-        if (Input.GetKeyDown(KeyCode.Space) && pour)
-        {
-            Debug.Log("space");
-            //GetComponent<ParticleSystem>().Play();
-            
-    
-        }
+
         if (turned && Input.GetMouseButtonUp(0) && pour)
         {
             if (gameObject.CompareTag("flour"))
@@ -177,8 +161,6 @@ public class PickUpItem : MonoBehaviour
             {
                 ManageBatter.water = true;
             }
-           // GetComponent<ParticleSystem>().Stop();
-
 
         }
 
