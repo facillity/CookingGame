@@ -111,7 +111,7 @@ public class PickUpItem : MonoBehaviour
 
             if (gameObject.CompareTag("egg") && hit.Length >= 2 && hit[1].collider.gameObject.CompareTag("bowl"))
             {
-                GameObject newObject = (GameObject)EditorUtility.InstantiatePrefab(newGameObject);
+                GameObject newObject = Instantiate(newGameObject, transform.position, Quaternion.identity);// (GameObject)EditorUtility.InstantiatePrefab(newGameObject);
                 newObject.transform.position = gameObject.transform.position;
                 newObject.transform.rotation = gameObject.transform.rotation;
                 ManageBatter.egg = true;
