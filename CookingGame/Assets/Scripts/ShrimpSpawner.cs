@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ShrimpSpawner : MonoBehaviour
 {
@@ -21,8 +22,9 @@ public class ShrimpSpawner : MonoBehaviour
     public GameObject shrimp5;
     public GameObject shrimp6;
     public GameObject shrimp7;
-    public int totalTime;
+    int totalTime;
     List<GameObject> shrimps;
+    bool isGameOver;
     int NumShrimpFinished;
     int NumShrimpBurnt;
     int lives;
@@ -30,13 +32,12 @@ public class ShrimpSpawner : MonoBehaviour
 
     private void Awake()
     {
+        totalTime = 25;
         lives = 3;
         NumShrimpBurnt = 0;
         timeLeft = totalTime;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
+        isGameOver = false;
+
         shrimps = new List<GameObject>();
         shrimps.Add(shrimp);
         shrimps.Add(shrimp1);
@@ -47,25 +48,32 @@ public class ShrimpSpawner : MonoBehaviour
         shrimps.Add(shrimp6);
         shrimps.Add(shrimp7);
     }
+    // Start is called before the first frame update
+    void Start()
+    {
+    }
 
     // Update is called once per frame
     void Update()
     {
-        timeLeft = totalTime - (int)Time.time;
+        if (ProgressScript.cheats && Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.C))
+        {
+            Debug.Log("SKIPPED");
+            StartCoroutine(pauseAndWin());
+        }
         if (checkIfFinished())
         {
-            Time.timeScale = 0;
-            winText.gameObject.SetActive(true);
+            StartCoroutine(pauseAndWin());
         }
-        else if (lives<=0 || timeLeft<=0)
+        if (lives <= 0 || timeLeft <= 0)
         {
             gameOver();
-            totalTime += totalTime-timeLeft;
+            StartCoroutine(pauseAndReset());
+            //reset();
         }
-        if (timeLeft >= 0)
+        else
         {
-            Timer.text = "Time Left: " + timeLeft.ToString();
-            int temp = (int)Time.time;
+            advanceTime();
         }
     }
 
@@ -75,14 +83,47 @@ public class ShrimpSpawner : MonoBehaviour
         LivesLeft.text = "Lives: " + lives.ToString();
     }
 
-
-    /*void InstantiateShrimp()
+    private void advanceTime()
     {
-        float xPos = Random.Range(SpawnMinX, SpawnMaxX);
-        float yPos = Random.Range(SpawnMinY, SpawnMaxY);
-        Instantiate(shrimp, new Vector3(xPos, yPos, 0), Quaternion.identity);
-        //shrimps[shrimps.Length] = shrimp;  
-    }*/
+        //Debug.Log(timeLeft);
+        timeLeft = totalTime - (int)Time.timeSinceLevelLoad;
+        Timer.text = "Time Left: " + timeLeft.ToString();
+    }
+
+    IEnumerator pauseAndReset()
+    {
+        totalTime += totalTime - timeLeft;
+        Time.timeScale = 0;
+        float stopTime = Time.realtimeSinceStartup + 3;
+        while(Time.realtimeSinceStartup < stopTime)
+        {
+            //Debug.Log(Time.time);
+            lives = 3;
+            GameOverUI.gameObject.SetActive(true);
+            yield return 0;
+        }
+        
+        Time.timeScale = 1;
+        //Debug.Log("end pause");
+        reset();
+        GameOverUI.gameObject.SetActive(false);
+    }
+
+    IEnumerator pauseAndWin()
+    {
+        Time.timeScale = 0;
+        float stopTime = Time.realtimeSinceStartup + 3;
+        while (Time.realtimeSinceStartup < stopTime)
+        {
+            //Debug.Log(Time.time);
+            winText.gameObject.SetActive(true);
+            yield return 0;
+        }
+        Time.timeScale = 1;
+        GameObject.Find("Progress").GetComponent<ProgressScript>().stage++;
+        SceneManager.LoadScene("ShrimpRecipe");
+    }
+    
 
     private bool checkIfFinished()
     {
@@ -96,19 +137,22 @@ public class ShrimpSpawner : MonoBehaviour
         return true;
     }
 
-    
 
-    private void gameOver()
+    private void reset()
     {
+        
+        lives = 3;
+        LivesLeft.text = "Lives: " + lives.ToString();
+        isGameOver = false;
         foreach (GameObject s in shrimps)
         {
             s.GetComponent<Shrimp>().Reset();
         }
+    }
+
+    private void gameOver()
+    {
+        isGameOver = true;
         GameOverUI.gameObject.SetActive(true);
-        totalTime = 25;
-        Timer.text = "Time Left: " + 25.ToString();
-        lives = 3;
-        LivesLeft.text = "Lives: " + lives.ToString();
-        //Time.timeScale = 0;
     }
 }

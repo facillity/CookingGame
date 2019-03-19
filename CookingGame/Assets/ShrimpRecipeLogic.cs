@@ -63,7 +63,7 @@ public class ShrimpRecipeLogic : MonoBehaviour
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 2){
                 SceneManager.LoadScene("ShrimpMiniGameDirections");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 3){
-                SceneManager.LoadScene("end_screens");
+                SceneManager.LoadScene("ShrimpMiniGameDirections");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 4){
                 SceneManager.LoadScene("end_screens");
             }

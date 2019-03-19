@@ -15,6 +15,7 @@ public class ShrimpMinigameDirections : MonoBehaviour
     public Sprite shrimp1;
     public Sprite shrimp2;
     public Sprite shrimp3;
+    public Sprite shrimp4;
 
     void Update(){
         if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 0){
@@ -47,6 +48,16 @@ public class ShrimpMinigameDirections : MonoBehaviour
             ArrowKeys.SetActive(false);
         }
 
+        if(GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 3)
+        {
+            gameTitle.text = "Frying";
+            gameDescription.text = "Click and drage the shrimp into the fryer then take them out and put them on the left when they're done. Be careful not to burn them!";
+            gameImage.GetComponent<Image>().sprite = shrimp4;
+            Keyboard.SetActive(false);
+            Mouse.SetActive(true);
+            ArrowKeys.SetActive(false);
+        }
+
         if (Input.GetKeyDown("space")){
             if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 0){
                 SceneManager.LoadScene("ShrimpShopping");
@@ -54,8 +65,8 @@ public class ShrimpMinigameDirections : MonoBehaviour
                 SceneManager.LoadScene("ShrimpTempuraFlour");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 2){
                 SceneManager.LoadScene("ShrimpTempuraBatter");
-            } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 2){
-                SceneManager.LoadScene("end_screens");
+            } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 3){
+                SceneManager.LoadScene("Minigame4");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 2){
                 SceneManager.LoadScene("end_screens");
             }

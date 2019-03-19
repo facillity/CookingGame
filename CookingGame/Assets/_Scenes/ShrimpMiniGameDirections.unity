@@ -151,6 +151,7 @@ MonoBehaviour:
   shrimp1: {fileID: 21300000, guid: a38e8a74002703a4b9eea0ade937e27c, type: 3}
   shrimp2: {fileID: 21300000, guid: bbc0b026ca606d1439918fcd32087022, type: 3}
   shrimp3: {fileID: 21300000, guid: fb648cdb80519af409ce1a780b1341f9, type: 3}
+  shrimp4: {fileID: 21300000, guid: df27d6761107df14eb3696f0ade991a1, type: 3}
 --- !u!114 &334858332
 MonoBehaviour:
   m_ObjectHideFlags: 0

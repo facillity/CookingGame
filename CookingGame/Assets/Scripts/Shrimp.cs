@@ -41,30 +41,7 @@ public class Shrimp : MonoBehaviour
         mousePos2D = new Vector2(mousePos.x, mousePos.y);
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D[] hit = Physics2D.RaycastAll(mousePos2D, Vector2.zero);
-            if (!isPickedUp)
-            { 
-                if (hit.Length>=1 && hit[0].collider.gameObject == this.gameObject && !notDone)
-                {
-                    isPickedUp = true;
-                    if(isCooked)
-                    {
-                        isCooking = false;
-                    }
-                }
-            }
-            else if(!isCooking && hit.Length>=2 && hit[1].collider.gameObject.CompareTag("fryer slot") && !isCooked)
-            {
-                isPickedUp = false;
-                isCooking = true;
-                //isCooked = true;
-                initCookTime = (int)Time.time;
-            }
-            else if (isCooked && hit.Length>=2 && hit[0].collider.gameObject.CompareTag("Board"))
-            {
-                isPickedUp = false;
-                isFinished = true;
-            }
+            handleClick();
         }
         if(isCooking)
         {
@@ -77,6 +54,34 @@ public class Shrimp : MonoBehaviour
             this.transform.position = mousePos2D;
         }
 
+    }
+
+    void handleClick()
+    {
+        RaycastHit2D[] hit = Physics2D.RaycastAll(mousePos2D, Vector2.zero);
+        if (!isPickedUp)
+        {
+            if (hit.Length >= 1 && hit[0].collider.gameObject == this.gameObject && !notDone)
+            {
+                isPickedUp = true;
+                if (isCooked)
+                {
+                    isCooking = false;
+                }
+            }
+        }
+        else if (!isCooking && hit.Length >= 2 && hit[1].collider.gameObject.CompareTag("fryer slot") && !isCooked)
+        {
+            isPickedUp = false;
+            isCooking = true;
+            //isCooked = true;
+            initCookTime = (int)Time.time;
+        }
+        else if (isCooked && hit.Length >= 2 && hit[0].collider.gameObject.CompareTag("Board"))
+        {
+            isPickedUp = false;
+            isFinished = true;
+        }
     }
 
     void cook(int initTime)
@@ -119,8 +124,12 @@ public class Shrimp : MonoBehaviour
         this.GetComponent<SpriteRenderer>().sprite = standardSprite;
         isFinished = false;
         isCooked = false;
+        isCooking = false;
         isBurnt = false;
-        notDone = true;
+        notDone = false;
+        doOnce = false;
+        audio.gameObject.SetActive(false);
+        isPickedUp = false;
     }
 }
 
