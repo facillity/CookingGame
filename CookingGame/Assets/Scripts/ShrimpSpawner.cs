@@ -68,13 +68,11 @@ public class ShrimpSpawner : MonoBehaviour
         if (lives <= 0 || timeLeft <= 0)
         {
             gameOver();
+            totalTime += totalTime - timeLeft;
             StartCoroutine(pauseAndReset());
             //reset();
         }
-        else
-        {
-            advanceTime();
-        }
+        advanceTime();
     }
 
     public void loseLife()
@@ -92,7 +90,7 @@ public class ShrimpSpawner : MonoBehaviour
 
     IEnumerator pauseAndReset()
     {
-        totalTime += totalTime - timeLeft;
+        
         Time.timeScale = 0;
         float stopTime = Time.realtimeSinceStartup + 3;
         while(Time.realtimeSinceStartup < stopTime)
@@ -106,6 +104,7 @@ public class ShrimpSpawner : MonoBehaviour
         Time.timeScale = 1;
         //Debug.Log("end pause");
         reset();
+        
         GameOverUI.gameObject.SetActive(false);
     }
 
