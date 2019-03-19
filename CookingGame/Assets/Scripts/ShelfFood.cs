@@ -79,7 +79,7 @@ public class ShelfFood : MonoBehaviour
        UpdateLives();
        if (doneShopping || cheated)
         {
-            
+            UpdateList();
             winText.gameObject.SetActive(true);
             timer += Time.deltaTime;
             if (timer > 7f)

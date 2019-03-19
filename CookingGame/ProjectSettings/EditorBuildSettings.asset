@@ -68,4 +68,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/ShrimpTempuraFlour.unity
     guid: 56bff095b76af0a4da420fb087361bc1
+  - enabled: 1
+    path: Assets/_Scenes/ShoppingSausage.unity
+    guid: f265c9d6fa41fae4285a78468cfdf8c4
+  - enabled: 1
+    path: Assets/_Scenes/ShrimpShopping.unity
+    guid: e39306df3f0f7dc40801bead865486c5
   m_configObjects: {}

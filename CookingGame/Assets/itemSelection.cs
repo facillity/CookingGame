@@ -19,10 +19,10 @@ public class itemSelection : MonoBehaviour
             GameObject.Find("Progress").GetComponent<ProgressScript>().stage = 0;
         } else if (sceneNum == 8){
             GameObject.Find("Progress").GetComponent<ProgressScript>().dish = 2;
-            GameObject.Find("Progress").GetComponent<ProgressScript>().stage = 1;
+            GameObject.Find("Progress").GetComponent<ProgressScript>().stage = 0;
         } else if (sceneNum == 12){
             GameObject.Find("Progress").GetComponent<ProgressScript>().dish = 1;
-            GameObject.Find("Progress").GetComponent<ProgressScript>().stage = 1;
+            GameObject.Find("Progress").GetComponent<ProgressScript>().stage = 0;
         }
         //GameObject.Find("Progress").GetComponent<ProgressScript>().stage = 0;
         SceneManager.LoadScene(sceneNum);

@@ -43,7 +43,7 @@ public class MoveItem : MonoBehaviour
         {
             gameObject.layer = 14; // i created a layer called "falling" which is index 14 of the layers
             isHit = true;    
-
+            shopList = ShelfFood.shoppingList;
             for (int i = 0; i < shopList.Length; i++)
             {
                 if (gameObject.name == ShelfFood.shoppingList[i] && ShelfFood.quantity[i] != 0)

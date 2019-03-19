@@ -529,7 +529,7 @@ MonoBehaviour:
   Keyboard: {fileID: 189924871}
   Mouse: {fileID: 1172973869}
   ArrowKeys: {fileID: 624453017}
-  breakfast1: {fileID: 21300000, guid: 6e5bfafa722ec934ba1282be1966ad75, type: 3}
+  breakfast1: {fileID: 21300000, guid: f0e40ea5b5dce5246b234e6cd77cdf26, type: 3}
   breakfast2: {fileID: 21300000, guid: 9a246185279355c4ca75a03dc7abafdd, type: 3}
   breakfast3: {fileID: 21300000, guid: c1ec3686e87d97c4e9f2971d4db3c4d3, type: 3}
   breakfast4: {fileID: 21300000, guid: ab17a401df3785e498f34e70820ee133, type: 3}

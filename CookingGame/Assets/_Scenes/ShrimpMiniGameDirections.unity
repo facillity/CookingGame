@@ -148,7 +148,7 @@ MonoBehaviour:
   Keyboard: {fileID: 1523575012}
   Mouse: {fileID: 386093585}
   ArrowKeys: {fileID: 1465070596}
-  shrimp1: {fileID: 0}
+  shrimp1: {fileID: 21300000, guid: a38e8a74002703a4b9eea0ade937e27c, type: 3}
   shrimp2: {fileID: 21300000, guid: bbc0b026ca606d1439918fcd32087022, type: 3}
   shrimp3: {fileID: 21300000, guid: fb648cdb80519af409ce1a780b1341f9, type: 3}
 --- !u!114 &334858332

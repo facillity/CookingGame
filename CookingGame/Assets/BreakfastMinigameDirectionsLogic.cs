@@ -19,14 +19,14 @@ public class BreakfastMinigameDirectionsLogic : MonoBehaviour
 
     void Update(){
         if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 0){
-            /*
+            
             gameTitle.text = "Gather Items";
             gameDescription.text = "Move the hand using up arrow and down arrow to get all the items on your shopping list! Be careful not to get too many wrong items or more items than you need!";
             gameImage.GetComponent<Image>().sprite = breakfast1;
             Keyboard.SetActive(false);
             Mouse.SetActive(false);
             ArrowKeys.SetActive(true);
-            */
+            
         }
 
         if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 1){
@@ -58,7 +58,7 @@ public class BreakfastMinigameDirectionsLogic : MonoBehaviour
 
         if (Input.GetKeyDown("space")){
             if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 0){
-                //SceneManager.LoadScene("minigame1");
+                SceneManager.LoadScene("ShoppingSausage");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 1){
                 SceneManager.LoadScene("SausageCutting");
             } else if (GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 2){
