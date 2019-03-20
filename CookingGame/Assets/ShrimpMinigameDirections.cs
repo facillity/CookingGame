@@ -51,7 +51,7 @@ public class ShrimpMinigameDirections : MonoBehaviour
         if(GameObject.Find("Progress").GetComponent<ProgressScript>().stage == 3)
         {
             gameTitle.text = "Frying";
-            gameDescription.text = "Click and drage the shrimp into the fryer then take them out and put them on the left when they're done. Be careful not to burn them!";
+            gameDescription.text = "Click and drag the shrimp into the fryer. Wait until they're done as shown with a green time bar. When they're done, put them on the left. Be careful not to burn them!";
             gameImage.GetComponent<Image>().sprite = shrimp4;
             Keyboard.SetActive(false);
             Mouse.SetActive(true);
